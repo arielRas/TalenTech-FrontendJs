@@ -1,0 +1,91 @@
+body{
+    font-family: 'Roboto';
+}
+
+/*~~~~~~~~~~~~~~~~~~~~Barra de navegacion~~~~~~~~~~~~~~~~~~~~*/
+
+header{    
+    background-color: rgb(0, 0, 0);
+}
+
+.nav-container{
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo-container{
+    flex: 1;
+}
+
+.nav-logo{
+    width: 100px;
+    padding-left: 5px;
+}
+
+nav{
+    flex: 2;
+}
+
+nav ul {
+    display: flex;    
+    justify-content: center;
+    column-gap: 5%;
+    list-style: none;  
+    padding: 0;  
+}
+
+nav li{
+    transition: transform 0.2s;
+}
+
+nav li:hover{
+    transform: scale(1.1);
+}
+
+nav a{    
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+
+.nav-items-container{
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    max-width: 25%;
+}
+
+.nav-item-cart{
+    width: 40px;
+    padding-right: 5px;
+    transition: transform 0.2s;
+}
+
+.nav-item-cart:hover{
+    transform: scale(1.2);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~Main index~~~~~~~~~~~~~~~~~~~~*/
+main{
+    max-width: 1200px;
+    border: solid 1px black;
+    margin: 0 auto;
+}
+
+/*--------Imagen portada--------*/
+.frontpage-container{
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+#frontpage-image{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
