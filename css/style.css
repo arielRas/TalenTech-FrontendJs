@@ -69,6 +69,7 @@ nav a{
     transform: scale(1.2);
 }
 
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~Main index~~~~~~~~~~~~~~~~~~~~~~~~*/
 main{
     background-image: url(../img/background-image.jpg);
@@ -79,7 +80,6 @@ main{
 .home-main-container{
     background-color: rgba(0, 0, 0, 0.6);
     max-width: 1200px;
-    border: solid 1px black;
     margin: 0 auto;
     color: rgb(233, 252, 245);
 }
@@ -100,21 +100,15 @@ main{
 
 /*--------Titulos--------*/
 .home-main-container h1{
-    border: solid 1px black;
     text-align: center;
 }
 
 .home-main-container h2{
-    border: solid 1px black;
     text-align: center;
 }
 
-.home-main-container h3{
-    border: solid 1px black;
-    text-align: center;
-}
 
-/*--------Secciones--------*/
+/*---Elementos de secciones---*/
 .home-main-container section{
     padding-bottom: 30px;
 }
@@ -124,28 +118,103 @@ main{
 }
 
 .home-main-container p{
-    padding: 10px;
     text-align: justify;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-.section-category-container{
+
+/*---Seccion categorias---*/
+.category-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
 }
 
+.category-item{
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid rgb(74, 60, 201);
+}
+
+.category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.category-overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    opacity: 1;    
+}
+
+.category-overlay span{
+    padding-bottom: 10px;
+}
+
+.category-item:hover img{
+    transform: scale(1.1);
+}
+
+
+/*---Seccion pc gamer---*/
 .section-video-container{
     display: flex;
     justify-content: center;
 }
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~General Footer~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 footer{
     background-color: rgb(0, 0, 0);
     color: #fff;
     padding: 20px 20px;
     text-align: center;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~General MediaQueries~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media(max-width:600px){
+    .frontpage-container{
+        display: none;
+    }
+
+    .nav-container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    nav ul {
+        display: flex;    
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 10px;
+        list-style: none;  
+        padding: 0;  
+    }
+
+    .nav-items-container{
+        display: flex;
+        justify-content: center;
+        max-width: 60px;
+    }
 }
