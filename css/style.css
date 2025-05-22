@@ -1,10 +1,11 @@
 body{
     font-family: 'Roboto';
+    margin: 0;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~Barra de navegacion~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-header{    
+header{
     background-color: rgb(0, 0, 0);
 }
 
@@ -29,11 +30,11 @@ nav{
 }
 
 nav ul {
-    display: flex;    
+    display: flex;
     justify-content: center;
     column-gap: 5%;
-    list-style: none;  
-    padding: 0;  
+    list-style: none;
+    padding: 0;
 }
 
 nav li{
@@ -44,24 +45,23 @@ nav li:hover{
     transform: scale(1.1);
 }
 
-nav a{    
+nav a{
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    
+
 }
 
 .nav-items-container{
     display: flex;
     justify-content: flex-end;
     flex: 1;
-    max-width: 25%;
 }
 
 .nav-item-cart{
     width: 40px;
-    padding-right: 5px;
+    padding-right: 15px;
     transition: transform 0.2s;
 }
 
@@ -172,7 +172,7 @@ main{
     color: white;
     font-weight: bold;
     font-size: 18px;
-    opacity: 1;    
+    opacity: 1;
 }
 
 .category-overlay span{
@@ -223,25 +223,53 @@ footer{
         display: none;
     }
 
+    .nav-logo{
+        width: 100px;
+        padding: 15px
+    }
+
     .nav-container{
-        display: flex;
-        align-items: center;
         flex-direction: column;
         margin: 0 auto;
     }
 
+    nav{
+        width: 100%;
+    }
+
     nav ul {
-        display: flex;    
-        justify-content: center;
-        flex-direction: column;
-        row-gap: 10px;
-        list-style: none;  
-        padding: 0;  
+        display: block;
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    nav li{
+        border: rgb(78, 75, 75) solid 1px;
+        margin: 15px auto;
+        padding: 15px;
+        border-radius: 13px;
+        box-shadow: 0 4px 8px rgba(86, 74, 253, 0.5);
+        width: 90%;
+    }
+
+    nav li a{
+        font-size: 20px;
     }
 
     .nav-items-container{
-        display: flex;
+        width: 92%;
         justify-content: center;
-        max-width: 60px;
+        box-shadow: 0 4px 8px rgba(86, 74, 253, 0.5);
+        border: rgb(78, 75, 75) solid 1px;
+        border-radius: 12px;
+        padding: 8px;
+        margin-bottom: 20px;
     }
+
+    .nav-item-cart:hover,
+    nav li:hover{
+        transform: none;        
+    }
+
 }
