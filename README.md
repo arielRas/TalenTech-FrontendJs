@@ -1,7 +1,7 @@
-# 🕹️ E-Commerce Gamer - Preentrega Proyecto Final
+# 🕹️ TalentoTech - E-Shop - Preentrega Proyecto Final
 
-Este proyecto es una **preentrega** del curso [**Frontend JS**](https://talentech.com.ar/) impartido por **TalenTech**.  
-Simula una tienda e-commerce especializada en **hardware informático gamer**. El objetivo es aplicar conocimientos fundamentales de HTML y CSS para construir una interfaz web responsiva y funcional.
+Este proyecto es una **preentrega** del curso [**Frontend JS**](https://talentotech.bue.edu.ar/#/) impartido por **TalentoTech**.  
+Simula una tienda e-commerce especializada en **hardware informático**. El objetivo es aplicar conocimientos fundamentales de HTML y CSS para construir una interfaz web responsiva y funcional.
 
 ---
 
