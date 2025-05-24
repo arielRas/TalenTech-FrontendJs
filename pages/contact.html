@@ -10,7 +10,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    <title>e-shop | En construccion</title>
+    <title>e-shop | Contacto</title>
 </head>
 
 <body>
@@ -57,13 +57,57 @@
             </div>
 
             <!-- Titulo -->
-            <h1>Página en construccion</h1>
+            <h1>Formulario de contacto</h1>
 
             <!-- Divisor -->
             <hr class="section-divider">
 
-            <img id="in-construction-image" src="../img/in-construction-image.png" alt="hombre-construyendo">           
+            <!-- Formulario de contacto -->
+            <form id="contact-form" method="post" action="https://formspree.io/f/xanozgrr">
+                <div class="form-container">
 
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Juan" required autofocus
+                            pattern="^[a-zA-z\s]+$">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Apellido</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Perez" required
+                            pattern="^[a-zA-z\s]+$">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="juanPerez@dominio.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth-date">Fecha de nacimiento</label>
+                        <input type="date" id="birth-date" name="birth-date" placeholder="dd/mm/aaaa" required>
+                    </div>
+
+                    <div class="form-group-radio">
+                        <label>¿Ya es cliente?</label>
+                        <input type="radio" id="isCustomerYes" name="isCustomer" value="1" required>
+                        <label for="isCustomerYes">Sí</label>
+                        <input type="radio" id="isCustomerNo" name="isCustomer" value="0" required>
+                        <label for="isCustomerNo">No</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea name="message" id="message" placeholder="Escribe tu mensaje aquí..." required
+                            rows="10"></textarea>
+                    </div>
+
+                    <div class="form-buttons-container">
+                        <button type="reset">Reestablacer</button>
+                        <button type="submit">Enviar</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </main>
 
