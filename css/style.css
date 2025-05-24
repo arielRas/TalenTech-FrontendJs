@@ -131,7 +131,7 @@ main{
     height: 1px;
     background: rgba(255, 255, 255, 0.2);
     margin: 40px auto;
-    max-width: 1050px;
+    max-width: 85%;
 }
 
 
@@ -191,6 +191,67 @@ main{
 }
 
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~Contact.html~~~~~~~~~~~~~~~~~~~~~~~~*/
+#contact-form{
+    display: flex;    
+    justify-content: center;
+    padding: 30px;
+}
+
+.form-container{
+    border: rgb(78, 75, 75) solid 1px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(86, 74, 253, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    padding: 25px;
+    width: 50%;
+    margin: 0 top;
+}
+
+.form-buttons-container,
+.form-group-radio,
+.form-group{    
+    width: 100%;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.form-group-radio{
+    display: flex;
+    padding: 10px;
+}
+
+.form-buttons-container{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    padding: 10px;
+}
+
+.form-buttons-container button{
+    width: 35%;
+    height: 150%;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.form-buttons-container button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(86, 74, 253, 0.5);
+}
+
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~General Footer~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 footer{
@@ -217,7 +278,9 @@ footer{
 }
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~General MediaQueries~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~MediaQueries~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*---Navbar e imagen de portada (todo el sitio)---*/
 @media(max-width:600px){
     .frontpage-container{
         display: none;
@@ -250,7 +313,7 @@ footer{
         padding: 15px;
         border-radius: 13px;
         box-shadow: 0 4px 8px rgba(86, 74, 253, 0.5);
-        width: 90%;
+        width: 20%;
     }
 
     nav li a{
@@ -258,7 +321,7 @@ footer{
     }
 
     .nav-items-container{
-        width: 92%;
+        width: 23%;
         justify-content: center;
         box-shadow: 0 4px 8px rgba(86, 74, 253, 0.5);
         border: rgb(78, 75, 75) solid 1px;
@@ -270,6 +333,11 @@ footer{
     .nav-item-cart:hover,
     nav li:hover{
         transform: none;        
+    }
+
+
+    .form-container{
+        width: 80%;
     }
 
 }
