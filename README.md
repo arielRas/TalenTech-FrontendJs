@@ -37,7 +37,8 @@ TalenTech-FrontendJs/
 ├── img/
 │   └── [imágenes del sitio]
 ├── pages/
-│   └── [páginas adicionales]
+│   ├── contact.html
+│   └── in-construction.html
 ├── index.html
 └── README.md
 ```
@@ -46,7 +47,7 @@ TalenTech-FrontendJs/
 ## 🌐 Hosting
 
 El proyecto está disponible en línea a través de **GitHub Pages**.  
-🔗 [Enlace al sitio web (disponible tras publicación)](https://arielras.github.io/TalenTech-FrontendJs/)
+🔗 [Enlace al sitio web](https://arielras.github.io/TalenTech-FrontendJs/)
 
 ---
 
