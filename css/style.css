@@ -1,6 +1,16 @@
 body{
     font-family: 'Roboto';
     margin: 0;
+    background-image: url(../img/background-image.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main{
+    background-color: rgba(0, 0, 0, 0.6);
+    max-width: 1200px;
+    margin: 0 auto;
+    color: rgb(233, 252, 245);
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HEADER~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -78,18 +88,12 @@ nav a:hover{
 }
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~Main index~~~~~~~~~~~~~~~~~~~~~~~~*/
-main{
-    background-image: url(../img/background-image.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Main Index~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-.home-main-container{
-    background-color: rgba(0, 0, 0, 0.6);
-    max-width: 1200px;
-    margin: 0 auto;
-    color: rgb(233, 252, 245);
+#home-main{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*--------Imagen portada--------*/
@@ -99,7 +103,7 @@ main{
     max-width: 1200px;
 }
 
-.frontpage-image{
+.frontpage-container img{
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -107,27 +111,25 @@ main{
 }
 
 /*--------Titulos--------*/
-.home-main-container h1{
+#home-main h1{
     text-align: center;
-    padding-top: 30px;
-    margin: 0;
 }
 
-.home-main-container h2{
+#home-main h2{
     text-align: center;
 }
 
 
 /*---Elementos de secciones---*/
-.home-main-container section{
-    padding-bottom: 30px;
+#home-main section{
+    width: 90%;
 }
 
-.home-main-container article{
+#home-main article{
     border: dotted 1px black;
 }
 
-.home-main-container p{
+#home-main p{
     text-align: justify;
     max-width: 1050px;
     margin: 0 auto;
@@ -136,10 +138,10 @@ main{
 
 .section-divider{
     border: none;
-    height: 1px;
+    height: 2px;
     background: rgba(255, 255, 255, 0.2);
     margin: 40px auto;
-    max-width: 85%;
+    width: 90%;
 }
 
 
