@@ -1,4 +1,6 @@
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HOME~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* -------------------------------------------------------------------------- */
+/*                                    HOME                                    */
+/* -------------------------------------------------------------------------- */
 
 #home-main {
     display: flex;
@@ -6,7 +8,7 @@
     align-items: center;
 }
 
-/*---Elementos de secciones---*/
+/* ------------------------- Elementos de secciones ------------------------- */
 #home-main section {
     width: 90%;
 }
@@ -31,7 +33,7 @@
 }
 
 
-/*---Seccion categorias---*/
+/* --------------------------- Seccion categorias --------------------------- */
 .category-container {
     display: flex;
     flex-wrap: wrap;
@@ -79,8 +81,7 @@
     transform: scale(1.1);
 }
 
-
-/*---Seccion pc gamer---*/
+/* ---------------------------- Seccion pc gamer ---------------------------- */
 .section-video-container {
     display: flex;
     justify-content: center;
@@ -88,43 +89,54 @@
 
 
 
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~PRODUCTOS~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* -------------------------------------------------------------------------- */
+/*                                  PRODUCTS                                  */
+/* -------------------------------------------------------------------------- */
 .grid-products {
     width: 90%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
     place-items: center;
-    column-gap: 5px;
+    gap: 5px;
 }
 
+
+/* --------------------------- Tarjeta de producto -------------------------- */
 .product-card {
     border: 1px solid black;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: rgba(104, 153, 151, 0.39);
+    height: 500px;
 }
 
 .img-container {
     width: 90%;
+    display: flex;
+    justify-content: center;
+    flex: 2;
 }
 
 .img-container img {
-    width: 100%;
-    height: 100%;
+    height: 200px;
 }
 
 .description-container {
+    flex: 3;
     width: 90%;
 }
 
 .description-container p {
     text-align: center;
+    max-height: 93px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .description-container span {
@@ -133,32 +145,75 @@
 }
 
 .kart-options-container {
+    flex: 1;
     display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
 .kart-options-container input {
-    width: 20px;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
     text-align: center;
+    border: none;
+    background-color: #f0f0f0c5;
+    border-radius: 4px;
+}
+
+.kart-options-container button {
+    width: 30px;
+    height: 30px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    margin: 0 4px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.kart-options-container button:active {
+    background-color: #3498db;
+    box-shadow: 0 0 5px #3498db;
 }
 
 .kart-btn-container {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    width: 90%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kart-btn-container button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.kart-btn-container button:active {
+    background-color: #16a085;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #1abc9c;
 }
 
 
 
-
-
-
-
-
-
-
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~CONTACTO~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* -------------------------------------------------------------------------- */
+/*                                  CONTACTO                                  */
+/* -------------------------------------------------------------------------- */
 #contact-form {
     display: flex;
     justify-content: center;
