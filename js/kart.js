@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                                  FUNCIONES                                 */
+/* -------------------------------------------------------------------------- */
+
 function createCardItem(kartItem){
     const newCardItem = document.createElement('div');
     newCardItem.classList.add('kart-item-container');
@@ -41,10 +45,29 @@ function getkart(){
     return JSON.parse(localStorage.getItem('kart')) || [];      
 }
 
+function emptyKart(){
+    localStorage.removeItem('kart');
+    const kartCount = document.getElementById('kart-count');
+    if(kartCount)
+        kartCount.remove();
+}
+
+function renderActionButtons(){
+    const btnContainer = document.querySelector('.kart-btn-container');
+
+    if(getkart().length){
+        btnContainer.style.display = 'flex';        
+    }
+    else{
+        btnContainer.style.display = 'none';   
+    }
+}
+
 function renderKart(){
     let kart = getkart();    
 
     const kartItemsContainer = document.querySelector('.kart-data-container');
+    kartItemsContainer.innerHTML = '';
 
     if(kart.length){
         kart.forEach(item => {
@@ -53,8 +76,30 @@ function renderKart(){
 
         kartItemsContainer.appendChild(createCardTotalAmount(kart));
     }
+
+    renderActionButtons();
 }
+
+function actionsBtnKartEventSuscribe(){
+
+    document.getElementById('empty-kart-btn').addEventListener('click', () => {
+        emptyKart();
+        renderKart();
+    });
+
+    document.getElementById('buy-btn').addEventListener('click', () => {
+        emptyKart();
+        renderKart();
+        alert('La compra se ha procesado con exito, en breve recibira un mail de nuestro equipo.\n¡¡¡Muchas gracias por su compra!!!');
+    });
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                               INICIALIZACION                               */
+/* -------------------------------------------------------------------------- */
 
 addEventListener('DOMContentLoaded', () =>{
     renderKart();
+    actionsBtnKartEventSuscribe();
 });
