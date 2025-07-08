@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <title>E-shop | Catalogo</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+
+            <!-- Logo de la tienda -->
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../img/logo.png" alt="Logo-tienda">
+                </a>
+            </div>
+
+            <!-- Barra de navegacion -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./catalogo.html">Catalogo</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">Contacto</a>
+                    </li>
+                    <li id="cart-link">
+                        <a href="./carrito.html">Carrito</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Contenedor auxiliar -->
+            <div class="header-aux-container">
+
+                <!-- Carrito -->
+                <div class="kart-container">
+                    <a href="./carrito.html">
+                        <img src="../img/logo-carrito.png" alt="logo-carrito">
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <!-- Boton hamburguesa -->
+            <button id="menu-burguer" class="burger-btn">&#9776;</button>
+        </div>
+    </header>
+
+    <main id="products-main">
+        <!-- Imagen portada -->
+        <div class="frontpage-container">
+            <img src="../img/imagen-portada.jpg" alt="imagen-portada">
+        </div>
+
+        <h1>Nuestros productos</h1>
+
+        <!-- Divisor -->
+        <hr class="section-divider">
+
+        <!-- Catalogo de productos -->
+        <div class="grid-products">            
+            <!-- Carga dinamica con JS -->
+        </div>
+
+        <!-- Control de paginacion -->
+        <div class="pagination-container">
+            <button id="prev-page" class="pagination-btn">Anterior</button>
+            <input id="page-input" type="text" value="1" disabled>
+            <button id="next-page" class="pagination-btn">Siguiente</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Derechos Reservados © 2025 - E-Shop.</p>
+        <div class="footer-items-container">
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="../img/logo-facebook.png" alt="logo-facebook">
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="../img/logo-instagram.png" alt="logo-instagram">
+            </a>
+
+            <a href="https://www.whatsapp.com/?lang=es_LA" target="_blank">
+                <img src="../img/logo-whatsapp.png" alt="logo-whatsapp">
+            </a>
+        </div>
+    </footer>
+    <script src="../js/common.js"></script>
+    <script src="../js/products.js"></script>
+</body>
+
+</html>

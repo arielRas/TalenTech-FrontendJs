@@ -8,19 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    <title>e-shop | En construccion</title>
+    <title>E-shop | Mi Carrito</title>
 </head>
 
 <body>
     <header>
-        <div class="nav-container">
+        <div class="header-container">
 
             <!-- Logo de la tienda -->
-            <div class="nav-logo-container">
+            <div class="logo-container">
                 <a href="../index.html">
-                    <img src="../img/logo.png" alt="Logo-tienda" class="nav-logo">
+                    <img src="../img/logo.png" alt="Logo-tienda">
                 </a>
             </div>
 
@@ -31,40 +32,49 @@
                         <a href="../index.html">Home</a>
                     </li>
                     <li>
-                        <a href="./in-construction.html">Catalogo</a>
+                        <a href="./catalogo.html">Catalogo</a>
                     </li>
                     <li>
                         <a href="./contact.html">Contacto</a>
                     </li>
+                    <li id="cart-link">
+                        <a href="./carrito.html">Carrito</a>
+                    </li>
                 </ul>
             </nav>
 
-            <!-- Carrito de compras -->
-            <div class="nav-items-container">
-                <a href="./in-construction.html">
-                    <img src="../img/logo-carrito.png" alt="logo-carrito" class="nav-item-cart">
-                </a>
+            <!-- Contenedor auxiliar -->
+            <div class="header-aux-container">
+
+                <!-- Carrito -->
+                <div class="kart-container">
+                    <a href="./carrito.html">
+                        <img src="../img/logo-carrito.png" alt="logo-carrito">
+                    </a>
+                </div>
             </div>
+
+            <!-- Boton hamburguesa -->
+            <button id="menu-burguer" class="burger-btn">&#9776;</button>
         </div>
     </header>
 
-    <main>
-        <div class="home-main-container">
+    <main id="kart-main">
+        <h1>Carrito de compras</h1>
 
-            <!-- Imagen portada -->
-            <div class="frontpage-container">
-                <img src="../img/imagen-portada.jpg" alt="imagen-portada" class="frontpage-image">
-            </div>
+        <!-- Divisor -->
+        <hr class="section-divider">
 
-            <!-- Titulo -->
-            <h1>Página en construccion</h1>
-
-            <!-- Divisor -->
-            <hr class="section-divider">
-
-            <img id="in-construction-image" src="../img/in-construction-image.png" alt="hombre-construyendo">           
-
+        <div class="kart-data-container">
+            <!-- Caga dinamica con JS -->
         </div>
+
+        <!-- Botones de accion -->
+        <div class="kart-btn-container">
+            <button id="buy-btn">COMPRAR</button>
+            <button id="empty-kart-btn">VACIAR</button>
+        </div>
+
     </main>
 
     <footer>
@@ -83,4 +93,8 @@
             </a>
         </div>
     </footer>
+    <script src="../js/common.js"></script>
+    <script src="../js/kart.js"></script>
 </body>
+
+</html>
