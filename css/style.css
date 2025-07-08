@@ -32,6 +32,10 @@
     width: 90%;
 }
 
+.section-video-container{
+    padding-bottom: 20px;
+}
+
 
 /* --------------------------- Seccion categorias --------------------------- */
 .category-container {
