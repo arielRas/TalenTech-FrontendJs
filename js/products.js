@@ -63,6 +63,20 @@ function addToKart(productItem) {
     }
 
     localStorage.setItem('kart', JSON.stringify(kart));
+    updateKartQuantity();
+}
+
+function updateKartQuantity() {
+    const kartContainer = document.querySelector('.kart-container');
+
+    const kart = JSON.parse(localStorage.getItem('kart')) || [];
+
+    if (kart.length) {
+        const quantityContainer = document.createElement('span');
+        quantityContainer.id = 'kart-count';
+        quantityContainer.innerText = kart.length;
+        kartContainer.appendChild(quantityContainer);
+    }
 }
 
 
@@ -90,8 +104,6 @@ function productCardEventSuscribe(productCard) {
 
         addToKart(productItem);
     });
-
-
 }
 
 function paginationButtonEventSuscribe() {

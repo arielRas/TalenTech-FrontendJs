@@ -89,6 +89,7 @@ nav a:hover{
 
 .kart-container{
     display: inline-block;
+    position: relative;
 }
 
 .kart-container img{
@@ -99,6 +100,23 @@ nav a:hover{
 
 .kart-container img:hover{
     transform: scale(1.1);
+}
+
+#kart-count{
+    background-color: rgb(189, 16, 16);
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    left: 55%;
+    top: 35%;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
 }
 
 .burger-btn {
