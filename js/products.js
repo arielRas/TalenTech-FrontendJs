@@ -7,16 +7,53 @@ async function getAllProducts(limit, skip) {
         const response = await fetch(`https://dummyjson.com/products/category/smartphones?limit=${limit}&skip=${skip}`)
 
         if (!response.ok)
-            throw new Error(`Error al intentar obtener los productos - Status Code: ${response.status}`);
+            throw new Error(`[ERROR] - Error al intentar obtener los productos - Status Code: ${response.status}`);
 
         const data = await response.json();
-        
+
         return data.products.map(x => toViewModel(x));
     }
     catch (error) {
         console.error(error.message);
         return null;
     }
+}
+
+async function getProductById(id) {
+    try {
+        const response = await fetch(`https://dummyjson.com/products/${id}`);
+
+        if (!response.ok)
+            throw new Error(`[ERROR] - El producto no esta disponible - Status Code: ${response.status}`);
+
+        const data = await response.json();
+
+        return toViewModel(data);
+    }
+    catch (error) {
+        console.error(error.message);
+        return null;
+    }
+}
+
+function getkart() {
+    return JSON.parse(localStorage.getItem('kart')) || [];
+}
+
+function addToKart(productItem) {
+    let kart = JSON.parse(localStorage.getItem('kart')) || [];
+
+    const existProduct = kart.some(x => x.product.id == productItem.product.id);
+
+    if (!existProduct) {
+        kart.push(productItem);
+    }
+    else {
+        const existingItem = kart.find(x => x.product.id === productItem.product.id);
+        existingItem.quantity += productItem.quantity;
+    }
+
+    localStorage.setItem('kart', JSON.stringify(kart));
 }
 
 async function renderProducts(numberPage) {
@@ -40,18 +77,31 @@ function toViewModel({ id, title, brand, price, images, description }) {
     };
 }
 
-function productCardEventSuscribe(productCard){ 
-    const quantity = productCard.querySelector('.kart-options-container input');  
-    
-    productCard.querySelector('.min-btn').addEventListener('click', () =>{
-        if(Number(quantity.value) > 1)
+function productCardEventSuscribe(productCard) {
+    const quantity = productCard.querySelector('.kart-options-container input');
+
+    productCard.querySelector('.min-btn').addEventListener('click', () => {
+        if (Number(quantity.value) > 1)
             quantity.value = Number(quantity.value) - 1;
     });
 
-    productCard.querySelector('.max-btn').addEventListener('click', () =>{
-        if(Number(quantity.value) < 10)
+    productCard.querySelector('.max-btn').addEventListener('click', () => {
+        if (Number(quantity.value) < 10)
             quantity.value = Number(quantity.value) + 1;
     });
+
+    productCard.querySelector('.kart-btn-container button').addEventListener('click', async () => {
+        const id = productCard.closest('.product-card').dataset.productId;
+
+        const productItem = {
+            product: await getProductById(id),
+            quantity: Number(quantity.value)
+        }
+
+        addToKart(productItem);        
+    });
+
+
 }
 
 function createProductCard(product) {
@@ -75,9 +125,9 @@ function createProductCard(product) {
         </div> 
         <div class="kart-btn-container">
             <button>Agregar al carrito</button>
-        </div>`;          
+        </div>`;
 
-    productCardEventSuscribe(productCard); 
+    productCardEventSuscribe(productCard);
 
     return productCard;
 }
