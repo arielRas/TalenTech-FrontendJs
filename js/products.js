@@ -1,6 +1,16 @@
 /* -------------------------------------------------------------------------- */
+/*                                 CONSTANTES                                 */
+/* -------------------------------------------------------------------------- */
+
+const MAX_PRODUCT_FOR_PAGE = 6;
+
+
+
+/* -------------------------------------------------------------------------- */
 /*                                  FUNCIONES                                 */
 /* -------------------------------------------------------------------------- */
+
+/* ----------------------------- Llamadas a API ----------------------------- */
 async function getAllProducts(limit, skip) {
 
     try {
@@ -10,7 +20,6 @@ async function getAllProducts(limit, skip) {
             throw new Error(`[ERROR] - Error al intentar obtener los productos - Status Code: ${response.status}`);
 
         const data = await response.json();
-
         return data.products.map(x => toViewModel(x));
     }
     catch (error) {
@@ -27,7 +36,6 @@ async function getProductById(id) {
             throw new Error(`[ERROR] - El producto no esta disponible - Status Code: ${response.status}`);
 
         const data = await response.json();
-
         return toViewModel(data);
     }
     catch (error) {
@@ -36,6 +44,7 @@ async function getProductById(id) {
     }
 }
 
+/* ------------------------- Manipulacion de carrito ------------------------ */
 function getkart() {
     return JSON.parse(localStorage.getItem('kart')) || [];
 }
@@ -56,27 +65,8 @@ function addToKart(productItem) {
     localStorage.setItem('kart', JSON.stringify(kart));
 }
 
-async function renderProducts(numberPage) {
-    const products = await getAllProducts(12, numberPage);
 
-    const productsGrid = document.querySelector('.grid-products');
-
-    products.forEach(product => {
-        productsGrid.appendChild(createProductCard(product))
-    });
-}
-
-function toViewModel({ id, title, brand, price, images, description }) {
-    return {
-        id,
-        title,
-        brand,
-        price,
-        images,
-        description
-    };
-}
-
+/* ------------------------- Susbcripcion a eventos ------------------------- */
 function productCardEventSuscribe(productCard) {
     const quantity = productCard.querySelector('.kart-options-container input');
 
@@ -98,17 +88,42 @@ function productCardEventSuscribe(productCard) {
             quantity: Number(quantity.value)
         }
 
-        addToKart(productItem);        
+        addToKart(productItem);
     });
 
 
 }
 
+function paginationButtonEventSuscribe() {
+
+    document.getElementById('prev-page').addEventListener('click', () => {
+        const currentPage = document.getElementById('page-input');
+        const currentPageValue = Number(currentPage.value);
+
+        if (currentPageValue > 1) {
+            renderProducts(currentPageValue - 2);
+            currentPage.value = currentPageValue - 1;
+        }
+    });
+
+    document.getElementById('next-page').addEventListener('click', () => {
+        const currentPage = document.getElementById('page-input');
+        const currentPageValue = Number(currentPage.value);
+        const productsInPage = document.querySelectorAll('.grid-products .product-card').length;
+        
+        if (productsInPage === MAX_PRODUCT_FOR_PAGE) {
+            renderProducts(currentPageValue);
+            currentPage.value = currentPageValue + 1;
+        }        
+    });
+}
+
+
+/* ------------------------------- Auxiliares ------------------------------- */
 function createProductCard(product) {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
     productCard.dataset.productId = product.id;
-
     productCard.innerHTML = `
         <div class="img-container">
             <img src=${product.images[0]} alt="">
@@ -132,10 +147,39 @@ function createProductCard(product) {
     return productCard;
 }
 
+async function renderProducts(numberPage) {
+
+    const products = await getAllProducts(MAX_PRODUCT_FOR_PAGE, numberPage * MAX_PRODUCT_FOR_PAGE);
+
+    const productsGrid = document.querySelector('.grid-products');
+
+    productsGrid.innerHTML = '';
+
+    products.forEach(product => {
+        productsGrid.appendChild(createProductCard(product))
+    });
+}
+
+function toViewModel({ id, title, brand, price, images, description }) {
+    return {
+        id,
+        title,
+        brand,
+        price,
+        images,
+        description
+    };
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                INICIALIZADOR                               */
+/* -------------------------------------------------------------------------- */
 
 addEventListener('DOMContentLoaded', () => {
-
-    renderProducts(1);
+    paginationButtonEventSuscribe();
+    renderProducts(0);
 });
 
 
